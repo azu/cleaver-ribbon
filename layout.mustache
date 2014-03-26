@@ -5,27 +5,39 @@
     <meta charset="{{encoding}}">
     <meta name="viewport" content="width=792, user-scalable=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    
+
     <style>
-        {{{style}}}
-        {{{externalStyle}}}
+            {{{style}}}
+            {{{externalStyle}}}
     </style>
 
 </head>
 <body class="list">
 
-    <header class="caption">
-        <h1>{{title}}</h1>
-        <p><a href="{{author.url}}">{{author.name}}</a>, {{custom.company}}</p>
-    </header>
+<header class="caption">
+    <h1>{{title}}</h1>
+    <ul>
+        <li>
+            Name : <a href="{{author.url}}">{{author.name}}</a>
+        </li>
+{{#author.twitter}}
+        <li>
+            Twitter : <a href="https://twitter.com/{{{author.twitter}}}">{{author.twitter}}</a>
+        </li>
+{{/author.twitter}}
+    </ul>
+    <p class="shower-description">スライドをクリックでスタート、矢印キーでスライド移動、Escで一覧モードへ戻る</p>
+</header>
 
-    <div class="slideshow-wrapper">
+<div class="slideshow-wrapper">
     {{{slideshow}}}
-    </div>
-    <div class="progress"><div></div></div>
-    
-    <script type="text/javascript">
+</div>
+<div class="progress">
+    <div></div>
+</div>
+
+<script type="text/javascript">
         {{{script}}}
-    </script>
+</script>
 </body>
 </html>
