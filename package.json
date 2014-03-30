@@ -1,0 +1,26 @@
+{
+  "name": "cleaver-ribbon",
+  "description": "cleaver-theme",
+  "version": "0.0.1",
+  "homepage": "https://github.com/azu/cleaver-ribbon/",
+  "repository": {
+    "url": "git://github.com/azu/cleaver-ribbon.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "directories": {
+    "test": "test/"
+  },
+  "author": "azu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azu/cleaver-ribbon/issues"
+  },
+  "devDependencies": {
+    "gulp": "^3.6.0",
+    "gulp-concat": "^2.2.0",
+    "gulp-uglify": "^0.2.1"
+  }
+}

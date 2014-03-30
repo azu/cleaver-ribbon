@@ -20,11 +20,11 @@
         <li>
             Name : <a href="{{author.url}}">{{author.name}}</a>
         </li>
-{{#author.twitter}}
-        <li>
-            Twitter : <a href="https://twitter.com/{{{author.twitter}}}">{{author.twitter}}</a>
-        </li>
-{{/author.twitter}}
+        {{#author.twitter}}
+            <li>
+                Twitter : <a href="https://twitter.com/{{{author.twitter}}}">{{author.twitter}}</a>
+            </li>
+        {{/author.twitter}}
     </ul>
     <p class="shower-description">スライドをクリックでスタート、矢印キーでスライド移動、Escで一覧モードへ戻る</p>
 </header>
@@ -38,6 +38,7 @@
 
 <script type="text/javascript">
         {{{script}}}
+        {{{hammer}}}
 </script>
 </body>
 </html>
