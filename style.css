@@ -374,6 +374,9 @@ a {
 .slide.cover:after, .slide.shout:after {
   visibility: hidden; }
 
+.slide img {
+  max-width: 100%; }
+
 .slide.cover {
   background: #000; }
 

@@ -318,6 +318,10 @@ a {
   visibility: hidden;
 }
 
+.slide img {
+  max-width: 100%;
+}
+
 .slide.cover {
   background: #000;
 }
