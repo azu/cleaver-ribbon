@@ -11,6 +11,7 @@ window.shower = window.shower || (function (window, document, undefined) {
         progress = [],
         timer,
         isHistoryApiSupported = false;
+        noBestHashMode = true;
 
     /**
      * Slide constructor
@@ -567,7 +568,6 @@ window.shower = window.shower || (function (window, document, undefined) {
         if (shower.isSlideMode() && isHistoryApiSupported) {
             history.pushState(null, null, url.pathname + shower.getSlideHash(currentSlideNumber));
         }
-
         shower.scrollToSlide(currentSlideNumber);
 
         if (typeof(callback) === 'function') {
@@ -905,6 +905,12 @@ window.shower = window.shower || (function (window, document, undefined) {
                 if (shower.isSlideMode()) {
                     e.preventDefault();
                     shower.enterListMode();
+                    if(noBestHashMode) {
+                        url.hash = ''; // for older browsers, leaves a # behind
+                        if (history.pushState) {
+                            history.pushState('', document.title, window.location.pathname);
+                        }
+                    }
                 }
                 break;
 
