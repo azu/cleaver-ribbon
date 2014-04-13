@@ -363,7 +363,6 @@ window.shower = window.shower || (function (window, document, undefined) {
      */
     shower.go = function (slideNumber, callback) {
         var slide;
-
         if (!shower._isNumber(slideNumber)) {
             throw new Error('Gimme slide number as Number, baby!');
         }
@@ -824,6 +823,9 @@ window.shower = window.shower || (function (window, document, undefined) {
         }
 
         if (isSlideMode) {
+            shower.enterSlideMode();
+        } else if (currentSlideNumber > 0) {
+            shower.go(currentSlideNumber);
             shower.enterSlideMode();
         }
     }, false);
